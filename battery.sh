@@ -9,11 +9,11 @@
         if [ "$STATUS" = "Charging" ]; then
             printf " %s%% %s" "$batteryPercentage" "" 
         elif [ "$batteryPercentage" -le 15 ]; then 
-				printf " %s%% %s" "$batteryPercentage" "  "
+				printf " %s%% %s" "$batteryPercentage" "  "
 	    elif [ "$batteryPercentage" -le 30 ]; then 
 				printf " %s%% %s" "$batteryPercentage" "  "
 	    elif [ "$batteryPercentage" -le 50 ]; then 
-				printf " %s%% %s" "$batteryPercentage" 
+				printf " %s%% %s" "$batteryPercentage" "  "
 		elif [ "$batteryPercentage" -le 80 ]; then 
 				printf " %s%% %s" "$batteryPercentage" 
 		elif [ "$batteryPercentage" -le 100 ]; then 
