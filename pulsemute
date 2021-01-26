@@ -1,11 +1,11 @@
 #!/bin/sh
 
- muteState=$(pamixer --get-mute)
+ muteState=$(pamixer --get-mute )
 
  if [ "$muteState" = true ]; then 
-	 pamixer -u 
+	 pamixer -u ; pkill -RTMIN+10 dwmblocks
  else 
-	 pamixer -m
+	 pamixer -m ; pkill -RTMIN+10 dwmblocks
  fi
 
  
