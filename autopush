@@ -1,7 +1,8 @@
 #!/bin/sh
-read commitMessage
 
-echo "$commitMessage"
+printf "Enter The Commmit Message:"
+
+read commitMessage
 
 git add . && git commit -m "$commitMessage" && git push origin master
 
