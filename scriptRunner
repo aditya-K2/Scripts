@@ -1,0 +1,5 @@
+#!/bin/sh
+selectedScript=$(ls /home/aditya/suckless/scripts | dmenu) &&
+nvim /home/aditya/suckless/scripts/"$selectedScript" 
+
+

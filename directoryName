@@ -1,0 +1,13 @@
+#!/bin/sh
+
+response=$(printf "Yes\nNo" | dmenu -i -p "Do you want to change the Default Directory to Save Screenshots")
+if [ "$response" = "Yes" ]; then
+	chosendirectoryS=$(printf "" | dmenu -p "Please Enter The Folder Name:") &&
+    mkdir /home/aditya/Pictures/Screenshots/$chosendirectoryS &&
+	printf "/home/aditya/Pictures/Screenshots/$chosendirectoryS"> /home/aditya/suckless/scripts/directoryfile
+elif [ "$response" = "No" ]; then
+	chosendirectory=$(printf "" | dmenu -p "Please Enter The Directory path To Save ScreenShots in:") && 
+	printf "$chosendirectory"> /home/aditya/suckless/scripts/directoryfile
+fi
+
+
