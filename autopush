@@ -1,6 +1,6 @@
 #!/bin/sh
 
-printf "Enter The Commmit Message:"
+printf "Enter The Commmit Message: "
 
 read commitMessage
 
