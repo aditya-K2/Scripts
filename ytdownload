@@ -1,0 +1,19 @@
+#!/bin/bash
+mkdir /random/ytDownloads/$1 &&
+cd /random/ytDownloads/$1 &&
+
+youtube-dl -f 251 "$2"
+
+for i in *.webm
+do
+	ffmpeg -i "$i" -b:a 320k "${i%.webm}.mp3" &&
+	rm "$i"
+
+done
+
+
+
+
+
+
+

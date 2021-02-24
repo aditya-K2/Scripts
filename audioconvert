@@ -1,0 +1,7 @@
+#!/bin/sh
+for i in *.webm
+do
+	ffmpeg -i "$i" -b:a 320k "${i%.webm}.mp3" &&
+	rm "$i"
+
+done
