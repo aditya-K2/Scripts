@@ -1,0 +1,22 @@
+#!/bin/sh
+
+mpc toggle
+
+ARTIST=$(mpc current -f %artist%)
+TRACK=$(mpc current -f %title%)
+STATUS=$(mpc status | sed -n 2p | awk '{print $1;}')
+
+if [ "$STATUS" = "[playing]" ]; then
+	STATUS="Playing"
+	iconName="play-button.png"
+else
+	STATUS="Paused"
+	iconName="pause.png"
+fi
+
+messageTittle=$(printf "$STATUS") 
+messageBody=$(printf "%s - %s" "$ARTIST" "$TRACK")
+
+echo "$messageTittle"
+
+notify-send -t 1000 -i /D/Downloads/"$iconName" "$messageTittle" "$messageBody"
