@@ -1,12 +1,12 @@
 #!/bin/sh
 date=$(date '+%b%d(%a)')
-response=$(printf "Yes\nNo" | dmenu -i -p "Do you want to change the Default Directory to Save Screenshots")
+response=$(printf "Yes\nNo" | dmenu -i -c -l 5 -p "Do you want to change the Default Directory to Save Screenshots")
 if [ "$response" = "Yes" ]; then
-	chosendirectoryS=$(printf "" | dmenu -p "Please Enter The Folder Name:") &&
+	chosendirectorys=$(printf "" | dmenu -c -l 5 -p "please enter the folder name:") &&
     mkdir /home/aditya/Pictures/Screenshots/$chosendirectoryS$date &&
 	printf "/home/aditya/Pictures/Screenshots/$chosendirectoryS$date"> /home/aditya/suckless/scripts/directoryfile
 elif [ "$response" = "No" ]; then
-	chosendirectory=$(printf "" | dmenu -p "Please Enter The Directory path To Save ScreenShots in:") && 
+	chosendirectory=$(printf "" | dmenu -c -l 5 -p "Please Enter The Directory path To Save ScreenShots in:") && 
 	printf "$chosendirectory"> /home/aditya/suckless/scripts/directoryfile
 fi
 

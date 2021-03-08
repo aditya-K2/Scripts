@@ -1,0 +1,4 @@
+#!/bin/sh
+
+siteName=$(printf "github\nyoutube\ncodechef\nnetflix\nprimevideo\n" | dmenu -i -p "Enter The site You want to visit: ") &&
+brave "$siteName.com"

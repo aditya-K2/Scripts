@@ -1,0 +1,4 @@
+#!/bin/sh
+
+price=$(curl rate.sx/1btc)
+printf $price
